@@ -51,22 +51,18 @@ Let's get the list of stations that are contained in the dataset, so we can iden
 The file `ghcnd-stations.txt` contains the desired list. 
 This is the "object name" that we want to fetch using the OSDF.
 We combine the "namespace prefix" and the "object name" together to get the desired OSDF link:
-`/aws-opendata/us-east-1/noaa-ghcn-pds/ghcnd-stations.txt`.
-
-### Fetch overall file
+`osdf:///aws-opendata/us-east-1/noaa-ghcn-pds/ghcnd-stations.txt`.
 
 To download the file, we use the Pelican client with the OSDF URL:
 
-Let's construct a Pelican URL and use it to fetch a data object: 
-
-```
-URL=blah
-pelican object get $URL ./
-head ./*
-```
-
 ```
 pelican object get osdf:///aws-opendata/us-east-1/noaa-ghcn-pds/ghcnd-stations.txt ./
+```
+
+Once downloaded, we can preview the contents: 
+
+```
+head ghcnd-stations.txt
 ```
 
 ### Identify station
@@ -86,19 +82,26 @@ Here, the station ID is `USW00014837`.
 
 The per-station data is collected under `csv/by_station` and the filenames use the syntax `<STATION ID>.csv`. 
 
+Building the URL, this gives: 
+
+```
+osdf:///aws-opendata/us-east-1/noaa-ghcn-pds/csv/by_station/USW00014837.csv
+```
+
 To download the station data, we can use the following command:
 
 ```
-pelican object get osdf:///aws-opendata/us-east-1/noaa-ghcn-pds/csv/by_station/USW00014837.csv
+pelican object get osdf:///aws-opendata/us-east-1/noaa-ghcn-pds/csv/by_station/USW00014837.csv ./
 ```
 
-## Produce a visuzalization TBD
+## Produce a visualization TBD
 
 ## Share data via another origin
 
 ```
 URL=blah
 pelican put <file> URL
+
 ```
 
 ## View other files
