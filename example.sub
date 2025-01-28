@@ -1,0 +1,18 @@
+container_image = ???
+
+executable = example.py
+arguments = $(station_id)
+
+transfer_input_files = my_functions.py, osdf:///aws-opendata/us-east-1/noaa-ghcn-pds/csv/by_station/$(station_id).csv
+
+log = example.$(Cluster).log
+output = $(station_id).out
+error = $(station_id).err
+
+request_cpus = 1
+request_memory = 4GB
+request_disk = 4GB
+
+queue station_id from (
+    USW00014837
+)
