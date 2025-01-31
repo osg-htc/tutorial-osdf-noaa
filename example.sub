@@ -1,4 +1,4 @@
-container_image = osdf:///ospool/uc-shared/public/osg-training/tutorial-osdf-noaa/test.sif
+container_image = osdf:///ospool/uc-shared/public/OSG-Staff/training/python.sif
 
 executable   = example.py
 arguments    = $(station_id)
