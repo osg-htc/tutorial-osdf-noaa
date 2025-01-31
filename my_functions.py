@@ -29,7 +29,7 @@ def extract_temp_data(station_df: DataFrame, convert_to_fahrenheit=True) -> Data
     station_df.index = station_df.index.map(convert_int_to_date)
 
     # Filter down to just temperature data (units are "tenths of degrees C")
-    tempdf = station_df[['TMIN', 'TMAX']].astype(int).dropna()
+    tempdf = station_df[['TMIN', 'TMAX']].dropna().astype(int)
 
     # Convert to regular degrees Celsius
     tempdf = tempdf / 10
