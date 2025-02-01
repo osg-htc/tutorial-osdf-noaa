@@ -11,8 +11,17 @@ examples from Emma: https://github.com/NCAR/osdf_examples
 Andrew's example: https://github.com/aowen-uwmad/osdf-python-climate
 
 ## To Dos
-- get a list of potential input files we could use
-- Once we decide on inputs, make a mirror somewhere in space we control
-- confirm outline with everyone
-- make a container?
 
+- add images (url construction?? other???) to notebook 1
+- review notebook 1 objectives
+- overview and objectives for notebook 2
+- more text / links for notebook 2
+- overview and objectives for notebook 3
+- test again
+
+Last round
+
+- clear all outputs
+- generate README file / remove notes
+- upload to github
+- test one more time with a clean env. 
